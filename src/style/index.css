@@ -1,0 +1,155 @@
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a, a:visited {
+  color: inherit;
+}
+
+.main {
+  position: relative;
+  height: 100%;
+}
+
+.main > .content {
+  padding: 60px 10vw 0 10vw;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.header {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: white;
+  z-index: 99;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #1565c0;
+}
+
+.list-item {
+  display: flex;
+  padding: 5px 0px;
+  margin: 10px 0px;
+  border-bottom: 0.5px solid rgba(0,0,0,0.1);
+}
+
+.list-item > .list-content {
+  flex-grow: 1;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  justify-content: space-between;
+}
+
+.list-item > .list-content > .list-title {
+  font-weight: bold;
+}
+
+.list-item > .list-content > .list-type {
+  text-transform: capitalize;
+}
+
+.modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  padding: 10px;
+  background-color: white;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-wrapper > .autocomplete {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  padding: 8px;
+}
+
+.autocomplete > .item {
+  text-transform: capitalize;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+button {
+  outline: none;
+  background-color: #1565c0;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0d47a1;
+}
+
+.movie-detail {
+  display: flex;
+}
+
+.movie-detail > .stat {
+  margin-left: 20px;
+}
+
+.stat > .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.stat > .plot {
+  margin-bottom: 20px;
+}
+
+.desc {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.desc > .title{
+  flex-shrink: 0;
+  color: grey;
+  font-weight: bold;
+  display: inline-block;
+  width: 120px;
+}
