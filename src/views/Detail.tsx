@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom"
 import { getMovieDetail } from "../api/movies";
@@ -13,7 +13,7 @@ export default function DetailView() {
     const loading: boolean = useSelector((state:any) => state.movie.loading)
     const movie: MovieDetail = useSelector((state:any) => state.movie.detail)
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         try {
             dispatch({type: LOADING})
             const res = await getMovieDetail(location.id);
@@ -21,11 +21,11 @@ export default function DetailView() {
         } catch (e) {
             dispatch({type: ERROR})
         }
-    }
+    },[location.id, dispatch]);
 
     useEffect(()=>{
         fetchData()
-    },[])
+    },[fetchData])
     
     const handleBack = () => {
         history.goBack()

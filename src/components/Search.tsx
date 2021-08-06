@@ -16,7 +16,7 @@ export default function Search({onItemClick, hide, ...props}: Props) {
 
     useEffect(()=>{
         dispatch({type: LOAD_SEARCH_QUERIES})
-    },[])
+    },[dispatch])
 
     useEffect(()=>{
         const query = list.filter((i:string) => i.toLowerCase().indexOf(props.value.toLowerCase()) > -1);
